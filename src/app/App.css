@@ -1,6 +1,29 @@
-body {
-    background-color: steelblue;
+:root {
+    --primary-bg: #0f171e;
+    --secondary-bg: #1a242f;
+    --primary-font: #fff;
+    --secondary-font: #79b8f3;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-font);
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-font);
+}
+
+.container {
+    margin: 0px 40px;
+}
 
 
