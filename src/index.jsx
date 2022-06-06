@@ -6,9 +6,9 @@ import(/* webpackChunkName: "app" */ "./app/App")
     ReactDOM
     .createRoot(document.getElementById("root"))
     .render(
-        <React.StrictMode>
+        <React.Fragment>
             <App />
-        </React.StrictMode>
+        </React.Fragment>
     );
 });
 

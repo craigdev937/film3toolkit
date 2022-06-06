@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { FilmReducer } from "./FilmSlice";
 
 export const Reducer = configureStore({
     reducer: {
-        films: () => "OMDB Film Database!"
+        films: FilmReducer,
     },
 });
 

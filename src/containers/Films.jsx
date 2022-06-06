@@ -1,17 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { APIKey } from "../config/FilmAPI";
+import { List } from "./List";
+import { FilmActions } from "../global/FilmSlice";
 
 const URL = "https://www.omdbapi.com";
 export const Films = () => {
+    const filmText = "harry";
+    const dispatch = useDispatch();
     React.useEffect(() => {
-        const filmText = "harry";
         const fetchFilms = async () => {
             const res = await fetch(
                 `${URL}?apiKey=${APIKey}&s=${filmText}&type=movie`
             );
             if (!res.ok) throw new Error(res.statusText);
             const data = await res.json();
-            console.log(data);
+            dispatch(FilmActions.addFilms(data));
             return data;
         };
         fetchFilms();
@@ -19,7 +23,7 @@ export const Films = () => {
 
     return (
         <React.Fragment>
-            <h1>Films</h1>
+            <List />
         </React.Fragment>
     );
 };
