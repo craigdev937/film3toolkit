@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/indigomx9/film3toolkit.git"
   },
-  "keywords": [],
+  "keywords": ["React", "Webpack", "Fetch API", "React Router", "Redux Toolkit"],
   "author": "",
   "license": "ISC",
   "bugs": {

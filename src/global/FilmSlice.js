@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { API } from "./FetchAPI";
 
 const initialState = {
     films: [],
@@ -11,6 +12,19 @@ const FilmSlice = createSlice({
     initialState: initialState,
     reducers: {
         addFilms: (state, action) => {
+            state.films = action.payload
+        },
+    },
+    extraReducers: {
+        [API.getFilms.rejected]: (state, action) => {
+            state.loading = false,
+            state.error = action.payload
+        },
+        [API.getFilms.pending]: (state) => {
+            state.loading = true
+        },
+        [API.getFilms.fulfilled]: (state, action) => {
+            state.loading = false,
             state.films = action.payload
         },
     },
