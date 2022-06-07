@@ -7,6 +7,7 @@ export const Films = () => {
     const dispatch = useDispatch();
     React.useEffect(() => {
         dispatch(API.getFilms());
+        dispatch(API.fetchShows());
     }, [dispatch]);
 
     return (

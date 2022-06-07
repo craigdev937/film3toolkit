@@ -3,6 +3,7 @@ import { API } from "./FetchAPI";
 
 const initialState = {
     films: [],
+    shows: [],
     loading: false,
     error: null
 };
@@ -26,6 +27,17 @@ const FilmSlice = createSlice({
         [API.getFilms.fulfilled]: (state, action) => {
             state.loading = false,
             state.films = action.payload
+        },
+        [API.fetchShows.rejected]: (state, action) => {
+            state.loading = false,
+            state.error = action.payload
+        },
+        [API.fetchShows.pending]: (state) => {
+            state.loading = true
+        },
+        [API.fetchShows.fulfilled]: (state, action) => {
+            state.loading = false,
+            state.shows = action.payload
         },
     },
 });
