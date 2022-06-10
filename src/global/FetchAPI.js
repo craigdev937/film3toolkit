@@ -27,7 +27,7 @@ class FetchClass {
     fetchFilmOrShow = createAsyncThunk("films/fetchFilmOrShow", 
     async (id) => {
         const res = await fetch(
-            `${URL}=${APIKey}&i=${id}&Plot=full`
+            `${URL}?apiKey=${APIKey}&i=${id}&Plot=full`
         );
         if (!res.ok) throw new Error(res.statusText);
         const data = await res.json();

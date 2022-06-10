@@ -1,5 +1,5 @@
-.film-list, 
-.show-list {
+.film, 
+.show {
     margin: 20px 0px;
 }
 
@@ -9,7 +9,8 @@ h2 {
     font-weight: 400;
 }
 
-.film-container {
+.film-container,
+.show-container {
     display: grid;
     grid-template-columns: 
         repeat(auto-fill, minmax(240px, auto));

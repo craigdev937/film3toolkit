@@ -4,7 +4,7 @@ import { API } from "./FetchAPI";
 const initialState = {
     films: [],
     shows: [],
-    filmsOrShows: [],
+    selectFilmsOrShows: [],
     loading: false,
     error: null
 };
@@ -14,7 +14,7 @@ const FilmSlice = createSlice({
     initialState: initialState,
     reducers: {
         removeFOS: (state) => {
-            state.filmsOrShows = []
+            state.selectFilmsOrShows = [];
         },
     },
     extraReducers: {

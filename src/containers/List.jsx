@@ -32,15 +32,15 @@ export const List = () => {
 
     return (
         <main>
-            <section className="film-list">
+            <section className="film">
                 <h2>Films</h2>
                 <aside className="film-container">
                     {renderFilms}
                 </aside>
             </section>
-            <section className="show-list">
+            <section className="show">
                 <h2>Shows</h2>
-                <aside className="film-container">
+                <aside className="show-container">
                     {renderShows}
                 </aside>
             </section>

@@ -5,8 +5,8 @@ import { List } from "./List";
 
 export const Films = () => {
     const dispatch = useDispatch();
-    const filmText = "Star Trek";
-    const showText = "Scandal";
+    const filmText = "Star Wars";
+    const showText = "Mission Impossible";
 
     React.useEffect(() => {
         dispatch(API.getFilms(filmText));
