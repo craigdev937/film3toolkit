@@ -1,5 +1,6 @@
 import React from "react";
 import "./FCard.css";
+import { Link } from "react-router-dom";
 
 export const FCard = (props) => {
     return (

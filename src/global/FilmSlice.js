@@ -4,6 +4,7 @@ import { API } from "./FetchAPI";
 const initialState = {
     films: [],
     shows: [],
+    filmsOrShows: [],
     loading: false,
     error: null
 };
@@ -12,8 +13,8 @@ const FilmSlice = createSlice({
     name: "films",
     initialState: initialState,
     reducers: {
-        addFilms: (state, action) => {
-            state.films = action.payload
+        removeFOS: (state) => {
+            state.filmsOrShows = []
         },
     },
     extraReducers: {
@@ -38,6 +39,17 @@ const FilmSlice = createSlice({
         [API.fetchShows.fulfilled]: (state, action) => {
             state.loading = false,
             state.shows = action.payload
+        },
+        [API.fetchFilmOrShow.rejected]: (state, action) => {
+            state.loading = false,
+            state.error = action.payload
+        },
+        [API.fetchFilmOrShow.pending]: (state) => {
+            state.loading = true
+        },
+        [API.fetchFilmOrShow.fulfilled]: (state, action) => {
+            state.loading = false,
+            state.filmsOrShows = action.payload
         },
     },
 });

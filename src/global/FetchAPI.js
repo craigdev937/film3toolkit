@@ -2,23 +2,33 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { APIKey } from "../config/FilmAPI";
 
 const URL = "https://www.omdbapi.com";
-const filmText = "harry";
-const FILM_URL = `${URL}?apiKey=${APIKey}&s=${filmText}&type=movie`;
-const seriesText = "blacklist";
-const SHOW_URL = `${URL}?apiKey=${APIKey}&s=${seriesText}&type=series`;
 
 class FetchClass {
     getFilms = createAsyncThunk("films/getFilms", 
-    async () => {
-        const res = await fetch(FILM_URL);
+    async (term) => {
+        const res = await fetch(
+            `${URL}?apiKey=${APIKey}&s=${term}&type=movie`
+        );
         if (!res.ok) throw new Error(res.statusText);
         const data = await res.json();
         return data;
     });
 
     fetchShows = createAsyncThunk("shows/fetchShows", 
-    async () => {
-        const res = await fetch(SHOW_URL);
+    async (term) => {
+        const res = await fetch(
+            `${URL}?apiKey=${APIKey}&s=${term}&type=series`
+        );
+        if (!res.ok) throw new Error(res.statusText);
+        const data = await res.json();
+        return data;
+    });
+
+    fetchFilmOrShow = createAsyncThunk("films/fetchFilmOrShow", 
+    async (id) => {
+        const res = await fetch(
+            `${URL}=${APIKey}&i=${id}&Plot=full`
+        );
         if (!res.ok) throw new Error(res.statusText);
         const data = await res.json();
         return data;

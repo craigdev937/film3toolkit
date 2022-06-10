@@ -13,7 +13,7 @@ export const Main = () => (
         <main className="container">
             <Routes>
                 <Route path="/" element={<Films />} />
-                <Route path="/movie/:idmbID" element={<Details />} />
+                <Route path="/film/:idmbID" element={<Details />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </main>

@@ -11,7 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/indigomx9/film3toolkit.git"
   },
-  "keywords": ["React", "Webpack", "Fetch API", "React Router", "Redux Toolkit"],
+  "keywords": [
+    "React",
+    "Webpack",
+    "Fetch API",
+    "React Router",
+    "Redux Toolkit"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -25,7 +31,8 @@
     "react-dom": "^18.1.0",
     "react-hot-loader": "^4.13.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-slick": "^0.29.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

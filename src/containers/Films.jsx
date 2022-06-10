@@ -5,9 +5,12 @@ import { List } from "./List";
 
 export const Films = () => {
     const dispatch = useDispatch();
+    const filmText = "Star Trek";
+    const showText = "Scandal";
+
     React.useEffect(() => {
-        dispatch(API.getFilms());
-        dispatch(API.fetchShows());
+        dispatch(API.getFilms(filmText));
+        dispatch(API.fetchShows(showText));
     }, [dispatch]);
 
     return (
